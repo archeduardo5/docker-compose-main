@@ -1,39 +1,65 @@
-Table of Contents
+### Table of Contents
+
+<img width="100" alt="logo" src="https://github.com/user-attachments/assets/0c9cf0c6-1b4f-40aa-b8da-07fac22a1650" />
+
 Docker Compose v2
-Where to get Docker Compose
+Where to Get Docker Compose
 Windows and macOS
 Linux
 Quick Start
 Contributing
 Legacy
 Docker Compose v2
-GitHub release PkgGoDev Build Status Go Report Card Codecov OpenSSF Scorecard Docker Compose
+Docker Compose es una herramienta para ejecutar aplicaciones multi-contenedor en Docker, definidas usando el formato de archivo Compose. Un archivo Compose se usa para definir cómo se configuran uno o más contenedores que forman tu aplicación. Una vez que tienes el archivo Compose, puedes crear y arrancar tu aplicación con un solo comando:
 
-Docker Compose is a tool for running multi-container applications on Docker defined using the Compose file format. A Compose file is used to define how one or more containers that make up your application are configured. Once you have a Compose file, you can create and start your application with a single command: docker compose up.
-
-Where to get Docker Compose
+bash
+Copiar código
+docker compose up
+GitHub Release, PkgGoDev, Build Status, Go Report Card, Codecov, OpenSSF Scorecard
+Docker Compose GitHub Release
+PkgGoDev
+Build Status
+Go Report Card
+Codecov
+OpenSSF Scorecard
+Where to Get Docker Compose
 Windows and macOS
-Docker Compose is included in Docker Desktop for Windows and macOS.
+Docker Compose está incluido en Docker Desktop para Windows y macOS. Al instalar Docker Desktop, Docker Compose se instalará automáticamente.
 
 Linux
-You can download Docker Compose binaries from the release page on this repository.
+Puedes descargar los binarios de Docker Compose desde la página de releases de este repositorio.
 
-Rename the relevant binary for your OS to docker-compose and copy it to $HOME/.docker/cli-plugins
+Descarga el binario correspondiente a tu sistema operativo.
 
-Or copy it into one of these folders to install it system-wide:
+Renombra el archivo descargado a docker-compose.
 
-/usr/local/lib/docker/cli-plugins OR /usr/local/libexec/docker/cli-plugins
-/usr/lib/docker/cli-plugins OR /usr/libexec/docker/cli-plugins
-(might require making the downloaded file executable with chmod +x)
+Copia el binario a uno de los siguientes directorios para instalarlo de forma global:
 
+$HOME/.docker/cli-plugins
+/usr/local/lib/docker/cli-plugins o /usr/local/libexec/docker/cli-plugins
+/usr/lib/docker/cli-plugins o /usr/libexec/docker/cli-plugins
+Nota: Es posible que necesites dar permisos de ejecución al archivo con:
+
+bash
+Copiar código
+chmod +x /path/to/docker-compose
 Quick Start
-Using Docker Compose is a three-step process:
+El uso de Docker Compose es un proceso de tres pasos:
 
-Define your app's environment with a Dockerfile so it can be reproduced anywhere.
-Define the services that make up your app in compose.yaml so they can be run together in an isolated environment.
-Lastly, run docker compose up and Compose will start and run your entire app.
-A Compose file looks like this:
+Define el entorno de tu aplicación con un Dockerfile para que pueda ser reproducido en cualquier entorno.
 
+Define los servicios que componen tu aplicación en un archivo docker-compose.yaml para que puedan ser ejecutados juntos en un entorno aislado.
+
+Finalmente, ejecuta el comando:
+
+bash
+Copiar código
+docker compose up
+Compose arrancará y ejecutará tu aplicación completa.
+
+Ejemplo de archivo docker-compose.yaml:
+yaml
+Copiar código
 services:
   web:
     build: .
@@ -44,9 +70,10 @@ services:
   redis:
     image: redis
 Contributing
-Want to help develop Docker Compose? Check out our contributing documentation.
+¿Quieres ayudar a desarrollar Docker Compose? Consulta nuestra documentación para contribuir.
 
-If you find an issue, please report it on the issue tracker.
+Si encuentras un problema, por favor repórtalo en el rastreador de problemas.
 
 Legacy
-The Python version of Compose is available under the v1 branch.
+La versión en Python de Docker Compose está disponible en la rama v1 de este repositorio.
+
